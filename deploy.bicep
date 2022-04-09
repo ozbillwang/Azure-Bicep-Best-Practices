@@ -17,8 +17,6 @@ param subnets array = [
 
 param adminUsername string = 'adminUsername'
 
-param adminPassword string = 'FakePasswork5&&'
-
 param imageReference object = {
   'publisher': 'Canonical'
   'offer': 'UbuntuServer'
@@ -38,6 +36,11 @@ param osDisk object = {
 param osType string = 'Linux'
 
 param skuName string = 'Standard_DS1_v2'
+
+// https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions-string#newguid
+param guidValue string = newGuid()
+
+var adminPassword = '${toUpper(uniqueString(resourceGroup().id))}-${guidValue}'
 
 var name = '${namePrefix}-${env}'
 
