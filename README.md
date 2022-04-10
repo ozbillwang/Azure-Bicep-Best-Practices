@@ -33,3 +33,18 @@ Prerequesite
 
 * Dry run with command: `make dryRun env=dev`
 * deploy with command: `make deploy env=dev`
+
+### tips in preparing Bicep files
+
+* always use single quotes
+* reference output from another modules 
+
+https://github.com/ozbillwang/Azure-Bicep-Best-Practices/blob/master/deploy.bicep#L67
+
+>            'id': virtualNetwork.outputs.subnetResourceIds[0]
+
+* parameter names, variable names, function names, modules can't be duplicated, the design doesn't like what Terraform did, such as `var.name`, `module.name` but in Bicep, these variables can't identify. All of them are referenced by its name directly. 
+
+>     adminUsername: adminUsername (in this sample, `adminUsername` is parameter)
+>     adminPassword: adminPassword (in this sample, `adminPassword` is variable)
+>     'id': virtualNetwork.outputs.subnetResourceIds[0] (in this sample, virtualNetwork is the module name)
