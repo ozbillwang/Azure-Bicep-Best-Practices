@@ -31,5 +31,5 @@ Prerequesite
 
 >The property 'securityProfile.encryptionAtHost' is not valid because the 'Microsoft.Compute/EncryptionAtHost' feature is not enabled for this subscription.
 
-* Dry run with command: `make dryRun env=dev
-* deploy with command: `make deploy env=dev
+* Dry run with command: `make dryRun env=dev`
+* deploy with command: `make deploy env=dev`
