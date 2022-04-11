@@ -42,8 +42,11 @@ Prerequesite
 
 https://github.com/ozbillwang/Azure-Bicep-Best-Practices/blob/master/deploy.bicep#L67
 
->            'id': virtualNetwork.outputs.subnetResourceIds[0]
+>     'id': virtualNetwork.outputs.subnetResourceIds[0]
 
+If compare the requirement to prepare the real id of the azure resource, you will know how hard it is. 
+
+>    "id": "/subscriptions/<<subscriptionId>>/resourceGroups/agents-vmss-rg/providers/Microsoft.Network/virtualNetworks/sxx-az-vnet-x-scaleset/subnets/sxx-az-subnet-scaleset-linux" 
 * parameter names, variable names, function names, modules can't be duplicated, the design doesn't like what Terraform did, such as `var.name`, `module.name` but in Bicep, these variables can't identify. All of them are referenced by its name directly. 
 
 >     adminUsername: adminUsername (in this sample, `adminUsername` is parameter)
