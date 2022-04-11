@@ -18,6 +18,7 @@ I'd like to use the chance to show the best practices to Mac/Linux users, on how
 ### What is in this repo
 
 * Sample to manage multiple Bicep modules (`Virtual Network` and `Virtual Machine Scale Sets`)
+* Sample to show how we can reference one module's output and feed to other modules
 * Sample on how to use Azure Bicep modules to prepare the IaC deploy codes
 * Sample to manage deployment for different environments
 * Sample to manage bicep dry-run and deploy via Makefile
